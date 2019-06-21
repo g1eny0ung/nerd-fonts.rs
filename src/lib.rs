@@ -6,14 +6,12 @@ use std::path::Path;
 
 use yaml_rust::{Yaml, YamlLoader};
 
-#[allow(dead_code)]
 pub struct NerdFonts {
     nf: Yaml,
 }
 
-#[allow(dead_code)]
 impl NerdFonts {
-    fn load() -> Yaml {
+    pub fn load() -> Yaml {
         let nf_yaml_path_string = String::from(
             env!("CARGO_MANIFEST_DIR").to_owned() + "/resources/nerd-fonts-generated.yaml",
         );
@@ -36,7 +34,7 @@ impl NerdFonts {
         nf.clone()
     }
 
-    fn get(&self, key: &str) -> Option<&str> {
+    pub fn get(&self, key: &str) -> Option<&str> {
         self.nf[key].as_str()
     }
 }
