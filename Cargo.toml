@@ -3,6 +3,13 @@ name = "nerd_fonts"
 version = "0.1.0"
 authors = ["Yue Yang <g1enyy0ung@gmail.com>"]
 edition = "2018"
+description = "Nerd Fonts in rust."
+homepage = "https://github.com/g1eny0ung/nerd-fonts.rs"
+repository = "https://github.com/g1eny0ung/nerd-fonts.rs"
+license = "MIT"
+exclude = [
+  ".vscode/*"
+]
 
 [dependencies]
 regex = "1"
