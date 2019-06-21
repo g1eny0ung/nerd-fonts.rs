@@ -4,13 +4,14 @@ version = "0.1.0"
 authors = ["Yue Yang <g1enyy0ung@gmail.com>"]
 edition = "2018"
 description = "Nerd Fonts in rust."
+documentation = "https://docs.rs/nerd_fonts"
 homepage = "https://github.com/g1eny0ung/nerd-fonts.rs"
 repository = "https://github.com/g1eny0ung/nerd-fonts.rs"
 license = "MIT"
 exclude = [
-  ".vscode/*"
+  ".vscode/*",
+  "bin/*"
 ]
 
 [dependencies]
-regex = "1"
 yaml-rust = "0.4"

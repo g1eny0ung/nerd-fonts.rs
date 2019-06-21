@@ -1,0 +1,9 @@
+[package]
+name = "nerd_fonts_css_to_yaml"
+version = "0.1.0"
+authors = ["Yue Yang <g1enyy0ung@gmail.com>"]
+edition = "2018"
+publish = false
+
+[dependencies]
+regex = "1"

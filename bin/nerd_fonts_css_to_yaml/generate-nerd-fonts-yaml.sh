@@ -4,4 +4,6 @@ curl -sSL https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/css/nerd
 
 echo "Downloaded."
 
-cargo run --bin nerd_fonts_css_to_yaml
+cargo run
+
+mv resources/nerd-fonts-generated.yaml ../../resources/nerd-fonts-generated.yaml
