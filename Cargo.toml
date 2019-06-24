@@ -1,6 +1,6 @@
 [package]
 name = "nerd_fonts"
-version = "0.1.3"
+version = "0.1.4"
 authors = ["Yue Yang <g1enyy0ung@gmail.com>"]
 edition = "2018"
 description = "Nerd Fonts in rust."
