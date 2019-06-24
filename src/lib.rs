@@ -1,3 +1,32 @@
+//! [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) in rust.
+//! 
+//! # How to use
+
+//! In your `Cargo.toml`, add:
+
+//! ```toml
+//! [dependencies]
+//! nerd_fonts = "0.1"
+//! ```
+
+//! Then import it:
+
+//! ```rust
+//! extern crate nerd_fonts;
+//! ```
+
+//! Use `NerdFonts::load` to load:
+
+//! ```rust
+//! use nerd_fonts::NerdFonts;
+
+//! let nf = NerdFonts {
+//!     nf: NerdFonts::load(),
+//! };
+
+//! let nf_custom_c = nf.get("custom-c").unwrap(); // "e61e"
+//! ```
+
 extern crate yaml_rust;
 
 use std::fs::File;
@@ -6,11 +35,13 @@ use std::path::Path;
 
 use yaml_rust::{Yaml, YamlLoader};
 
+/// NerdFonts includes nf field which stores the whole nerd fonts Yaml.
 pub struct NerdFonts {
     nf: Yaml,
 }
 
 impl NerdFonts {
+    /// Load nerd fonts.
     pub fn load() -> Yaml {
         let nf_yaml_path_string = String::from(
             env!("CARGO_MANIFEST_DIR").to_owned() + "/resources/nerd-fonts-generated.yaml",
@@ -34,8 +65,9 @@ impl NerdFonts {
         nf.clone()
     }
 
-    pub fn get(&self, key: &str) -> Option<&str> {
-        self.nf[key].as_str()
+    /// get single font string by name.
+    pub fn get(&self, name: &str) -> Option<&str> {
+        self.nf[name].as_str()
     }
 }
 
@@ -51,5 +83,6 @@ mod tests {
 
         assert_eq!(nf.get("custom-c").unwrap(), "e61e");
         assert_eq!(nf.get("weather-windy").unwrap(), "e31e");
+        assert_eq!(nf.get("abc"), None);
     }
 }

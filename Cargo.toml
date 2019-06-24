@@ -7,6 +7,7 @@ description = "Nerd Fonts in rust."
 documentation = "https://docs.rs/nerd_fonts"
 homepage = "https://github.com/g1eny0ung/nerd-fonts.rs"
 repository = "https://github.com/g1eny0ung/nerd-fonts.rs"
+readme = "README.md"
 license = "MIT"
 exclude = [
   ".vscode/*",
