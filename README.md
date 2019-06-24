@@ -32,7 +32,7 @@ let nf = NerdFonts {
     nf: NerdFonts::load(),
 };
 
-let nf_custom_c = nf.get("custom-c").unwrap(); // "e61e"
+let nf_custom_c = nf.get("custom-c").unwrap(); // '\u{e61e}'
 ```
 
 # How to contribute

@@ -24,7 +24,7 @@
 //!     nf: NerdFonts::load(),
 //! };
 
-//! let nf_custom_c = nf.get("custom-c").unwrap(); // "e61e"
+//! let nf_custom_c = nf.get("custom-c").unwrap(); // '\u{e61e}'
 //! ```
 
 extern crate yaml_rust;
@@ -66,7 +66,7 @@ impl NerdFonts {
         nf.clone()
     }
 
-    /// get single font string by name.
+    /// get the single font by name.
     pub fn get(&self, name: &str) -> Option<char> {
         if let Some(f) = self.nf[name].as_str() {
             u32::from_str_radix(f, 16).ok().and_then(char::from_u32)
