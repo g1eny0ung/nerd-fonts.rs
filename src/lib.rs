@@ -37,7 +37,7 @@ use yaml_rust::{Yaml, YamlLoader};
 
 /// NerdFonts includes nf field which stores the whole nerd fonts Yaml.
 pub struct NerdFonts {
-    nf: Yaml,
+    pub nf: Yaml,
 }
 
 impl NerdFonts {
