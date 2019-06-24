@@ -1,5 +1,5 @@
 //! [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) in rust.
-//! 
+//!
 //! # How to use
 
 //! In your `Cargo.toml`, add:
@@ -29,6 +29,7 @@
 
 extern crate yaml_rust;
 
+use std::char;
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
@@ -66,8 +67,12 @@ impl NerdFonts {
     }
 
     /// get single font string by name.
-    pub fn get(&self, name: &str) -> Option<&str> {
-        self.nf[name].as_str()
+    pub fn get(&self, name: &str) -> Option<char> {
+        if let Some(f) = self.nf[name].as_str() {
+            u32::from_str_radix(f, 16).ok().and_then(char::from_u32)
+        } else {
+            None
+        }
     }
 }
 
@@ -81,8 +86,8 @@ mod tests {
             nf: NerdFonts::load(),
         };
 
-        assert_eq!(nf.get("custom-c").unwrap(), "e61e");
-        assert_eq!(nf.get("weather-windy").unwrap(), "e31e");
+        assert_eq!(nf.get("custom-c").unwrap(), '\u{e61e}');
+        assert_eq!(nf.get("weather-windy").unwrap(), '\u{e31e}');
         assert_eq!(nf.get("abc"), None);
     }
 }
