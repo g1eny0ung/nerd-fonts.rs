@@ -4,11 +4,11 @@
 
 [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) in rust.
 
-# Preinstall
+## Preinstall
 
 [https://github.com/ryanoasis/nerd-fonts#font-installation](https://github.com/ryanoasis/nerd-fonts#font-installation)
 
-# How to use
+## How to use
 
 In your `Cargo.toml`, add:
 
@@ -35,10 +35,10 @@ let nf = NerdFonts {
 let nf_custom_c = nf.get("custom-c").unwrap(); // '\u{e61e}'
 ```
 
-# How to contribute
+## How to contribute
 
 Pull a request or open an issue to describe your changes or problems.
 
-# License
+## License
 
 MIT@g1eny0ung
