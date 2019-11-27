@@ -12,8 +12,7 @@ fn main() {
     let css_path_string =
         String::from(env!("CARGO_MANIFEST_DIR").to_owned() + "/resources/nerd-fonts-generated.css");
     let css_path = Path::new(&css_path_string);
-    let css_file = File::open(&css_path);
-    let mut css_file = match css_file {
+    let mut css_file = match File::open(&css_path) {
         Ok(file) => file,
         Err(error) => panic!("Couldn't open file {}: {}", css_path.display(), error),
     };
@@ -30,8 +29,7 @@ fn main() {
         env!("CARGO_MANIFEST_DIR").to_owned() + "/resources/nerd-fonts-generated.yaml",
     );
     let yaml_path = Path::new(&yaml_path_string);
-    let yaml_file = File::create(&yaml_path);
-    let mut yaml_file = match yaml_file {
+    let mut yaml_file = match File::create(&yaml_path) {
         Ok(file) => file,
         Err(error) => panic!("Couldn't open file {}: {}", css_path.display(), error),
     };
