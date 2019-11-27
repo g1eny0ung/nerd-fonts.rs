@@ -48,8 +48,7 @@ impl NerdFonts {
             env!("CARGO_MANIFEST_DIR").to_owned() + "/resources/nerd-fonts-generated.yaml",
         );
         let nf_yaml_path = Path::new(&nf_yaml_path_string);
-        let nf_yaml_file = File::open(&nf_yaml_path);
-        let mut nf_yaml_file = match nf_yaml_file {
+        let mut nf_yaml_file = match File::open(&nf_yaml_path) {
             Ok(file) => file,
             Err(error) => panic!("Couldn't open file {}: {}", nf_yaml_path.display(), error),
         };
