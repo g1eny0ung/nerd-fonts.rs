@@ -16,6 +16,3 @@ exclude = [
 
 [dependencies]
 yaml-rust = "0.4"
-
-[lib]
-doctest = false
