@@ -59,10 +59,9 @@ impl NerdFonts {
             Err(error) => panic!("Couldn't read file {}: {}", nf_yaml_path.display(), error),
         }
 
-        let yaml = YamlLoader::load_from_str(&nf_yaml_contents).unwrap();
-        let nf = &yaml[0];
+        let nf = YamlLoader::load_from_str(&nf_yaml_contents).unwrap().pop().unwrap();
 
-        nf.clone()
+        nf
     }
 
     /// get the single font by name.
