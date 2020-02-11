@@ -89,6 +89,7 @@ mod tests {
 
         assert_eq!(nf.get("custom-c").unwrap(), '\u{e61e}');
         assert_eq!(nf.get("weather-windy").unwrap(), '\u{e31e}');
+        assert_eq!(nf.get("fae-cheese").unwrap(), '\u{e264}');
         assert_eq!(nf.get("abc"), None);
     }
 }
