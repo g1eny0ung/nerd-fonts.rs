@@ -67,7 +67,7 @@ impl NerdFonts {
         nf
     }
 
-    /// get the single font by name.
+    /// Get the single font by name.
     pub fn get(&self, name: &str) -> Option<char> {
         if let Some(f) = self.nf[name].as_str() {
             u32::from_str_radix(f, 16).ok().and_then(char::from_u32)
